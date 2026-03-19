@@ -1,15 +1,35 @@
 "use client";
 
 import {
-  Chart as ChartJS, CategoryScale, LinearScale,
-  BarElement, LineElement, PointElement, Tooltip, Legend,
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  BarController,
+  LineElement,
+  LineController,
+  PointElement,
+  Tooltip,
+  Legend,
+  Filler,
 } from "chart.js";
 import { Chart } from "react-chartjs-2";
 import { useMonth } from "@/context/MonthContext";
 import { getDaysInMonth, buildDayKey } from "@/lib/formatters";
 import type { Expense, Forecast } from "@/lib/types";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, PointElement, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  BarController,
+  LineElement,
+  LineController,
+  PointElement,
+  Tooltip,
+  Legend,
+  Filler
+);
 
 interface Props {
   expenses: Expense[];
