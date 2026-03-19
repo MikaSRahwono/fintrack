@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sidebar-w: 220px;
+  --header-h: 56px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: #0f0f13;
+  color: #e8e8f0;
+  font-family: var(--font-syne), sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #353545; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #5a5a72; }
+
+/* Number inputs — remove arrows */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type=number] { -moz-appearance: textfield; }
+
+/* Date input calendar icon color */
+input[type=date]::-webkit-calendar-picker-indicator {
+  filter: invert(0.4);
+  cursor: pointer;
+}
+
+/* Inline edit focus ring */
+.inline-edit:focus {
+  outline: none;
+  border-color: #a8ff3e !important;
+  background: #252530 !important;
+}
+
+/* Toast animation */
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.toast-enter { animation: toastIn 200ms ease forwards; }
+
+/* Chart canvas baseline */
+canvas { display: block; }
