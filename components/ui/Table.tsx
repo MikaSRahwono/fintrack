@@ -15,7 +15,7 @@ export function TableWrap({ children, className = "" }: TableProps) {
   );
 }
 
-export function Th({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+export function Th({ children, className = "" }: { children?: React.ReactNode; className?: string; colSpan?: number }) {
   return (
     <th className={`bg-bg-3 font-mono text-[10px] font-medium text-text-3 tracking-[0.1em] uppercase
       px-3.5 py-2.5 text-left border-b border-border sticky top-0 z-10 whitespace-nowrap ${className}`}>
@@ -24,7 +24,7 @@ export function Th({ children, className = "" }: { children: React.ReactNode; cl
   );
 }
 
-export function Td({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+export function Td({ children, className = "" }: { children?: React.ReactNode; className?: string; colSpan?: number }) {
   return (
     <td className={`px-3.5 py-2.5 text-text-2 align-middle ${className}`}>
       {children}
@@ -40,7 +40,7 @@ export function TfootRow({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function TfootTd({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+export function TfootTd({ children, className = "" }: { children?: React.ReactNode; className?: string; colSpan?: number }) {
   return (
     <td className={`px-3.5 py-2.5 font-mono text-[11px] font-semibold text-text ${className}`}>
       {children}
